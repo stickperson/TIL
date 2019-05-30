@@ -4,8 +4,13 @@ A random collection of (hopefully daily) learnings. Inspired by https://github.c
 
 ### Categories
 * [Django](#django)
+* [Python](#python)
 
 
 ### Django
 - [Adding non-model fields when using ModelAdmin](django/adding-non-model-fields-using-modeladmin.md)
 - [Editing related objects in the admin](django/editing-related-objects-in-admin.md)
+
+
+### Python
+- [Auto-reload in iPython](python/auto-reload-ipython.md)
