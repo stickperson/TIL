@@ -5,6 +5,8 @@ A random collection of (hopefully daily) learnings. Inspired by https://github.c
 ### Categories
 * [Django](#django)
 * [Python](#python)
+* [Raspberry Pi](#raspberry-pi)
+
 
 
 ### Django
@@ -14,3 +16,6 @@ A random collection of (hopefully daily) learnings. Inspired by https://github.c
 
 ### Python
 - [Auto-reload in iPython](python/auto-reload-ipython.md)
+
+### Raspberry Pi
+- [Headless Setup](raspberry_pi/headless_setup.md)
