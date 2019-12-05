@@ -19,3 +19,7 @@ A random collection of (hopefully daily) learnings. Inspired by https://github.c
 
 ### Raspberry Pi
 - [Headless Setup](raspberry_pi/headless_setup.md)
+
+
+### Random
+- [Slow Local Postgres Connection](random/slow_local_postgres_connection.md)
