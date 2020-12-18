@@ -1,0 +1,17 @@
+site_name: My Docs
+theme:
+    name: material
+repo_name: stickperson/TIL
+repo_url: https://github.com/stickperson/TIL
+nav:
+  - TIL: index.md
+  - Django: 
+    - Adding non-model fields when using ModelAdmin: 'django/adding-non-model-fields-using-modeladmin.md'
+    - Editing related objects in the admin: 'django/editing-related-objects-in-admin.md'
+  - Python:
+    - Auto-reload in iPython: 'python/auto-reload-ipython.md'
+  - Raspberry Pi:
+    - Headless Setup: 'raspberry_pi/headless_setup.md'
+  - Random:
+    - Slow Local Postgres Connection: 'random/slow_local_postgres_connection.md'
+
