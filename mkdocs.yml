@@ -10,9 +10,11 @@ nav:
     - Editing related objects in the admin: 'django/editing-related-objects-in-admin.md'
   - OpenWRT:
     - Custom DNS: 'openwrt/custom_dns/custom_dns.md'
+  - Postgres:
+    - Slow Local Postgres Connection: 'postgres/slow_local_postgres_connection.md'
   - Python:
     - Auto-reload in iPython: 'python/auto-reload-ipython.md'
-  - Random:
-    - Slow Local Postgres Connection: 'random/slow_local_postgres_connection.md'
   - Raspberry Pi:
     - Headless Setup: 'raspberry_pi/headless_setup.md'
+  - Unix:
+    - Exit Frozen SSH: 'unix/exit_frozen_ssh.md'
