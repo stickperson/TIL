@@ -7,6 +7,7 @@ For a potentially nicer view, check out [the documentation](https://stickperson.
 ## Categories
 * [Django](#django)
 * [OpenWRT](#openwrt)
+* [Postgres](#postgres)
 * [Python](#python)
 * [Raspberry Pi](#raspberry-pi)
 * [Unix](#unix)
