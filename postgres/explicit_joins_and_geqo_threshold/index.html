@@ -14,7 +14,7 @@
     
     
       
-        <title>Exit Frozen SSH - TIL</title>
+        <title>Explicit JOINs and Genetic Query Optimization - TIL</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exit-frozen-ssh" class="md-skip">
+        <a href="#explicit-joins-and-genetic-query-optimization" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Exit Frozen SSH
+              Explicit JOINs and Genetic Query Optimization
             
           </span>
         </div>
@@ -303,12 +303,14 @@
       
 
 
+  
+
 
   
-  <li class="md-nav__item md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Postgres
@@ -327,11 +329,20 @@
           
 
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../postgres/explicit_joins_and_geqo_threshold/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Explicit JOINs and Genetic Query Optimization
     </a>
+    
   </li>
 
         
@@ -342,7 +353,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../postgres/slow_local_postgres_connection/" class="md-nav__link">
+    <a href="../slow_local_postgres_connection/" class="md-nav__link">
       Slow Local Postgres Connection
     </a>
   </li>
@@ -442,14 +453,12 @@
       
 
 
-  
-
 
   
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
     
     <label class="md-nav__link" for="nav-7">
       Unix
@@ -468,20 +477,11 @@
           
 
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../unix/exit_frozen_ssh/" class="md-nav__link">
       Exit Frozen SSH
     </a>
-    
   </li>
 
         
@@ -518,14 +518,18 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/stickperson/TIL/edit/master/docs/unix/exit_frozen_ssh.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/stickperson/TIL/edit/master/docs/postgres/explicit_joins_and_geqo_threshold.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="exit-frozen-ssh">Exit Frozen SSH</h1>
-<p>Simple trick to exit frozen ssh sessions instead of spamming <code>Ctrl + C</code> (which probably doesn't work anyway).</p>
-<p>Simply type <code>~.</code>.</p>
+                <h1 id="explicit-joins-and-genetic-query-optimization">Explicit Joins and Genetic Query Optimization</h1>
+<p>While debugging a hairy, slow query, I noticed that a difference in <code>JOIN</code> and conditons in the <code>WHERE</code> clause resulted in significantly different query times. How does this happen; isn't the query planner supposed to be smart?</p>
+<p>I read the <a href="https://www.postgresql.org/docs/current/explicit-joins.html">Explicit <code>JOIN</code> Clauses doc</a> and learned the following:</p>
+<blockquote>
+<p>When a query only involves two or three tables, there aren't many join orders to worry about. But the number of possible join orders grows exponentially as the number of tables expands. Beyond ten or so input tables it's no longer practical to do an exhaustive search of all the possibilities, and even for six or seven tables planning might take an annoyingly long time. When there are too many input tables, the PostgreSQL planner will switch from exhaustive search to a genetic probabilistic search through a limited number of possibilities. (The switch-over threshold is set by the geqo_threshold run-time parameter.) The genetic search takes less time, but it won't necessarily find the best possible plan.</p>
+</blockquote>
+<p>It turns out this particular query involved 13 joins. I need to investigate this further to see if tweaking this parameter really changes things. An alternative and perhaps better approach would be breaking up the query and handling some of the joining elsewhere (python, additional queries etc.)</p>
                 
               
               
@@ -544,7 +548,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../raspberry_pi/headless_setup/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../openwrt/custom_dns/custom_dns/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -553,11 +557,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Headless Setup
+                Custom DNS
               </div>
             </div>
           </a>
         
+        
+          <a href="../slow_local_postgres_connection/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Slow Local Postgres Connection
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
