@@ -20,6 +20,7 @@ For a potentially nicer view, check out [the documentation](https://stickperson.
 - [Custom DNS](docs/openwrt/custom_dns/custom_dns.md)
 
 ### Postgres
+- [Explicit JOINs and Genetic Query Optimization](docs/postgres/explicit_joins_and_geqo_threshold.md)
 - [Slow Local Postgres Connection](docs/postgres/slow_local_postgres_connection.md)
 
 ### Python

@@ -11,6 +11,7 @@ nav:
   - OpenWRT:
     - Custom DNS: 'openwrt/custom_dns/custom_dns.md'
   - Postgres:
+    - Explicit JOINs and Genetic Query Optimization: 'postgres/explicit_joins_and_geqo_threshold.md'
     - Slow Local Postgres Connection: 'postgres/slow_local_postgres_connection.md'
   - Python:
     - Auto-reload in iPython: 'python/auto-reload-ipython.md'
