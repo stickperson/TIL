@@ -11,6 +11,7 @@ For a potentially nicer view, check out [the documentation](https://stickperson.
 * [Python](#python)
 * [Raspberry Pi](#raspberry-pi)
 * [Unix](#unix)
+* [Vim](#vim)
 
 ### Django
 - [Adding non-model fields when using ModelAdmin](docs/django/adding-non-model-fields-using-modeladmin.md)
@@ -31,3 +32,6 @@ For a potentially nicer view, check out [the documentation](https://stickperson.
 
 ### Unix
 - [Exiting Frozen SSH](docs/unix/exiting_frozen_ssh.md)
+
+### Vim
+- [Format JSON](docs/vim/format_json.md)

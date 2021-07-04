@@ -19,3 +19,5 @@ nav:
     - Headless Setup: 'raspberry_pi/headless_setup.md'
   - Unix:
     - Exit Frozen SSH: 'unix/exit_frozen_ssh.md'
+  - Vim:
+    - Format JSON: 'vim/format_json.md'
